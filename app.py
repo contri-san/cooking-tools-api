@@ -45,9 +45,9 @@ def auth_dependency(authorization: Optional[str] = Header(None)):
 app = FastAPI(title="Recipe Cooking Tools Recommendation Functions")
 
 # ヘルスチェック（Render推奨）
-@app.get("/healthz")
-def healthz():
-    return {"ok": True}
+@app.get("/")
+def root():
+    return {"ok": True, "service": "alive"}
 
 # ==== CORS ====
 app.add_middleware(
